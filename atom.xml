@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dark-aurora.github.io/</id>
-    <title>Aurora</title>
-    <updated>2020-04-11T14:03:01.702Z</updated>
+    <title>Assassin-Aurora</title>
+    <updated>2020-04-11T15:30:00.520Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dark-aurora.github.io/"/>
     <link rel="self" href="https://dark-aurora.github.io/atom.xml"/>
-    <subtitle>花看半开，酒饮微醺</subtitle>
+    <subtitle>沉醉</subtitle>
     <logo>https://dark-aurora.github.io/images/avatar.png</logo>
     <icon>https://dark-aurora.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Aurora</rights>
+    <rights>All rights reserved 2020, Assassin-Aurora</rights>
+    <entry>
+        <title type="html"><![CDATA[Xhell连接mysql报错]]></title>
+        <id>https://dark-aurora.github.io/post/xhell-lian-jie-mysql-bao-cuo-jie-jue-fang-an/</id>
+        <link href="https://dark-aurora.github.io/post/xhell-lian-jie-mysql-bao-cuo-jie-jue-fang-an/">
+        </link>
+        <updated>2020-04-11T14:13:48.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>报错信息</strong>：<br>
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO）<br>
+<strong>解决方案</strong><br>
+<em>可能是密码有误</em><br>
+1. 关闭mysql服务：service mysqld stop<br>
+2. 用管理员身份登陆屏蔽掉密码：</p>
+<ul>
+<li>
+<p>mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;</p>
+</li>
+<li>
+<p>也可以用：mysqld_safe --skip-grant-table</p>
+<ul>
+<li>直到出现：mysqld_safe Starting mysqld daemon</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>新起一个终端进到mysql：mysql -u root mysql</li>
+<li>修改root用户密码（括号内''里为新密码）：mysql&gt; UPDATE user SET Password=PASSWORD('newpassword') where USER='root';</li>
+<li>归还权限：mysql&gt; FLUSH PRIVILEGES;</li>
+<li>退出mysql：mysql&gt;\q</li>
+<li>此时重启mysql服务即可用新密码进入</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://dark-aurora.github.io/post/hello-gridea/</id>
