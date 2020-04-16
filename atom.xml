@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dark-aurora.github.io/</id>
     <title>Assassin-Aurora</title>
-    <updated>2020-04-12T02:09:31.661Z</updated>
+    <updated>2020-04-16T13:32:59.728Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dark-aurora.github.io/"/>
     <link rel="self" href="https://dark-aurora.github.io/atom.xml"/>
-    <subtitle>沉醉</subtitle>
+    <subtitle>煜</subtitle>
     <logo>https://dark-aurora.github.io/images/avatar.png</logo>
     <icon>https://dark-aurora.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Assassin-Aurora</rights>
