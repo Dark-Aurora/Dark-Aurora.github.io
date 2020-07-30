@@ -4,8 +4,8 @@
     <meta name="description" content="报错信息：
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO）
 解决方案
-可能是密码有误
-1. 关闭mysql服务：servi..." />
+1.暴力解决
+rm -fr /var/lib/mys..." />
     <meta name="keywords" content="xshell,mysql" />
     <link rel="stylesheet" href="https://dark-aurora.github.io//media/css/bootstrap.min.css">
     
@@ -36,7 +36,7 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N
 <body>
     <div id=side>
         <div class="avatar-border">
-            <img src="https://dark-aurora.github.io//images/avatar.png?v=1587043971595" class="avatar">
+            <img src="https://dark-aurora.github.io//images/avatar.png?v=1596118158983" class="avatar">
         </div>
         <div class="sitename">Assassin-Aurora</div>
         <span class="describtion" data-text='["煜"]'>&nbsp;</span>
@@ -311,7 +311,10 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N
                 <p><strong>报错信息</strong>：<br>
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO）<br>
 <strong>解决方案</strong><br>
-<em>可能是密码有误</em><br>
+1.暴力解决<br>
+rm -fr /var/lib/mysql/*<br>
+即可清空密码</p>
+<p><em>2.可能是密码有误</em><br>
 1. 关闭mysql服务：service mysqld stop<br>
 2. 用管理员身份登陆屏蔽掉密码：</p>
 <ul>
@@ -333,6 +336,13 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N
 <li>此时重启mysql服务即可用新密码进入</li>
 </ol>
 
+            </div>
+            
+            <div class="prev-post">
+                上一篇
+                <a href="https://dark-aurora.github.io/post/navicat-wu-fa-dao-ru-mysql-wen-jian/">
+                    Navicat 无法导入 mysql文件
+                </a>
             </div>
             
             
@@ -505,7 +515,10 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N
                 <p><strong>报错信息</strong>：<br>
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO）<br>
 <strong>解决方案</strong><br>
-<em>可能是密码有误</em><br>
+1.暴力解决<br>
+rm -fr /var/lib/mysql/*<br>
+即可清空密码</p>
+<p><em>2.可能是密码有误</em><br>
 1. 关闭mysql服务：service mysqld stop<br>
 2. 用管理员身份登陆屏蔽掉密码：</p>
 <ul>
@@ -527,6 +540,13 @@ ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: N
 <li>此时重启mysql服务即可用新密码进入</li>
 </ol>
 
+            </div>
+            
+            <div class="prev-post">
+                上一篇
+                <a href="https://dark-aurora.github.io/post/navicat-wu-fa-dao-ru-mysql-wen-jian/">
+                    Navicat 无法导入 mysql文件
+                </a>
             </div>
             
             

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dark-aurora.github.io/</id>
     <title>Assassin-Aurora</title>
-    <updated>2020-04-16T13:32:59.728Z</updated>
+    <updated>2020-07-30T14:13:30.305Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dark-aurora.github.io/"/>
     <link rel="self" href="https://dark-aurora.github.io/atom.xml"/>
@@ -10,6 +10,34 @@
     <logo>https://dark-aurora.github.io/images/avatar.png</logo>
     <icon>https://dark-aurora.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Assassin-Aurora</rights>
+    <entry>
+        <title type="html"><![CDATA[adb无法连接的相关问题]]></title>
+        <id>https://dark-aurora.github.io/post/adb-wu-fa-lian-jie-de-xiang-guan-wen-ti/</id>
+        <link href="https://dark-aurora.github.io/post/adb-wu-fa-lian-jie-de-xiang-guan-wen-ti/">
+        </link>
+        <updated>2020-07-30T14:03:00.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>adb server version (41) doesn't match this client (39); killing...</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Navicat 无法导入 mysql文件]]></title>
+        <id>https://dark-aurora.github.io/post/navicat-wu-fa-dao-ru-mysql-wen-jian/</id>
+        <link href="https://dark-aurora.github.io/post/navicat-wu-fa-dao-ru-mysql-wen-jian/">
+        </link>
+        <updated>2020-04-18T09:42:58.000Z</updated>
+        <content type="html"><![CDATA[<p>在导入时编码选择65001(UTF-8)，同时不勾选【在每个运行中运行多个查询】</p>
+<p>[Err] 1153 - Got a packet bigger than 'max_allowed_packet' bytes<br>
+当数据量大时，导出不会错误，但导入时会出现错误。</p>
+<p>1.找到 etc/my.ini或者my.cnf文件<br>
+最后一行加入<br>
+max_allowed_packet=16M</p>
+<p>2.若MySQL Daemon failed to start.<br>
+rm -fr /var/lib/mysql/*<br>
+即可</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Xhell连接mysql报错]]></title>
         <id>https://dark-aurora.github.io/post/xhell-lian-jie-mysql-bao-cuo-jie-jue-fang-an/</id>
@@ -19,7 +47,10 @@
         <content type="html"><![CDATA[<p><strong>报错信息</strong>：<br>
 ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO）<br>
 <strong>解决方案</strong><br>
-<em>可能是密码有误</em><br>
+1.暴力解决<br>
+rm -fr /var/lib/mysql/*<br>
+即可清空密码</p>
+<p><em>2.可能是密码有误</em><br>
 1. 关闭mysql服务：service mysqld stop<br>
 2. 用管理员身份登陆屏蔽掉密码：</p>
 <ul>
