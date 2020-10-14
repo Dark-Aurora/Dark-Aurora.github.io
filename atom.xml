@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dark-aurora.github.io/</id>
     <title>Assassin-Aurora</title>
-    <updated>2020-07-30T14:13:30.305Z</updated>
+    <updated>2020-10-14T08:11:47.767Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dark-aurora.github.io/"/>
     <link rel="self" href="https://dark-aurora.github.io/atom.xml"/>
@@ -16,9 +16,39 @@
         <link href="https://dark-aurora.github.io/post/adb-wu-fa-lian-jie-de-xiang-guan-wen-ti/">
         </link>
         <updated>2020-07-30T14:03:00.000Z</updated>
-        <content type="html"><![CDATA[<ol>
-<li>adb server version (41) doesn't match this client (39); killing...</li>
-</ol>
+        <content type="html"><![CDATA[<h1 id="报错如下">报错如下</h1>
+<p><code>adb server version (36) doesn't match this client (41); killing...</code><br>
+通过百度方式，发现是因为本地客户端client为41版本，而夜神模拟器所使用adb版本为36.</p>
+<p><mark>踩坑1</mark><br>
+下载了36版本的adb，替换了Android studio底下的adb<br>
+<s>（现在想想真是迷幻操作）（而且36版本的adb贼难找到下载）（还花了老子六毛钱）</s></p>
+<p><mark>踩坑2</mark><br>
+紧随其后在cmd里面，运行了adb devices，紧接着报错<br>
+<code>adb server is out of date .killing ... ADB server didn</code>t ACK`<br>
+<s>（精彩精彩简直想给自己鼓掌）（我就像一个兢兢业业的试错小能手）</s></p>
+<p>此时再在CSDN里找到的文章让我醒悟到人类的愚蠢<br>
+在查找端口时</p>
+<pre><code class="language-python">adb nodaemon server     
+'返回了 cannot bind to 127.0.0.1:5037:，可知其端口绑定的是5037'
+
+netstat -ano | findstr &quot;5027&quot;
+'查看到占用端口的进程，最后一列数字，为占用该端口的进程号PID'
+
+tasklist |findstr “1524”
+'找到占用的是nox_adb，发现是夜神模拟器的adb服务占用'
+</code></pre>
+<p>所以说，为何不把我自己高版本的adb复制到夜神模拟器里的adb去<br>
+说干就干</p>
+<p><mark>踩坑3</mark><br>
+然后就冒出来了这个<br>
+<code>cannot connect to 127.0.0.1:62001: 由于目标计算机积极拒绝,无法连接。 (10061)</code><br>
+百度一下发现自己，没有改夜神模拟器自己的nox_adb.exe，于是复制了一个高版本的，改了名字扔了进去<br>
+自此就好了。</p>
+<p>回顾一下发现自己还是对cmd指令里面的东西比较陌生。<br>
+比如说在想看adb的服务版本时，知道用adb version来查看。<br>
+也知道是配置了path，但是具体哪一个没有细想<br>
+今天在配置nox_adb时，才知道就是在path里面，加入nox_adb.exe的路径<br>
+就可以快速打开该程序，查看版本号了。</p>
 ]]></content>
     </entry>
     <entry>
